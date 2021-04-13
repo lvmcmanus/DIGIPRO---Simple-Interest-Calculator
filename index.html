@@ -4,7 +4,65 @@
     <link rel="stylesheet" href="style.css">
     </head>
     <body>
-        <h1>Simple Interest Calculator</h1>
+        <h1>Simple Int<!DOCTYPE html>
+<html>
+    <head>
+        <title>Digipro Interest Calculator</title>
+        <script src="script.js"></script>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    
+    <body onload="hideDetails()">
+               
+    <div class= "maindiv">
+    <h1 style="font-family:Verdana, Geneva, Tahoma, sans-serif; color: gray;
+        ">Digipro Interest Calculator</h1>
+
+    <p>Amount</p> <input type="number"  id="principal">  <br/><br>
+            
+    <form name="myform" oninput="range1value.value = rate.valueAsNumber">
+        Interest Rate <input name="rate" id="rateId" type="range" step="0.25" min="1" max="20">
+        <output name="range1value" for="rate">10.25</output><span style="color: black;">%</span>
+    </form> <br>
+      
+        No. of years <select name="years" id="years Id">
+            <option value="1">2021</option>
+            <option value="2">2022</option>
+            <option value="3">2023</option>
+            <option value="4">2024</option>
+            <option value="5">2025</option>
+            <option value="6">2026</option>
+            <option value="7">2027</option>
+            <option value="8">2028</option>
+            <option value="9">2029</option>
+            <option value="10">2030</option>
+    </select><br>
+    
+            
+    <form onsubmit="return validate();" method="get" action="http://google.com"><br/>
+            <button id="next" onclick="compute(this.principal, this.rate, this.years);">
+            Compute Interest</button> <br><br>
+    </form>
+
+    <span id="result"></span>
+
+    <div id="divContainer">
+        <p id="p01"> If you deposit 1000000 <span style="background-color:yellow" id="principalOutput" ></span></p>
+        <p id="p02"> at an interest rate of 3.5%.  <span style="background-color:yellow" id="interestOutput" ></span></p>
+        <p id="p03"> You will receive an amount of 175000, <span style="background-color:yellow" id="totalamountOutput" ></span></p>
+        <p id="p04"> in the year 2025<span style="background-color:yellow" id="yearOutput" ></span></p>  <br><br>
+    </div>
+
+    <footer>
+        &#169; This Calculator belongs to LVM
+    </footer>
+        
+    </div>
+
+          
+    </body>
+
+</html>erest Calculator</h1>
 
         Amount <input type="number"  id="principal">  <br/>
         Rate <input type="number"  id="rate">  <br/>
