@@ -12,10 +12,10 @@
             <h1>Simple Interest Calculator</h1>
 
             Amount <input type="number"  id="principal">  <br/>
-            <form name="myform" oninput="range1value.value = rate.valueAsNumber">
-        Interest Rate <input name="rate" id="rateId" type="range" step="0.25" min="1" max="20">
-        <output name="range1value" for="rate">10.25</output><span style="color: black;">%</span>
-    </form> <br>
+            Rate <input type="range" onchange="updateRate()" id="rate" min="1" max="20" value="10.25">
+                <span id="rate_val">
+                <output name="range1value" for="rate">10.25</output><span style="color: black;">%</span>
+                </span>  <br/> 
             No. of Years <select id="years">
                     <option value="1">2021</option>
                     <option value="2">2022</option>
