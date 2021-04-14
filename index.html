@@ -12,39 +12,32 @@
             <h1>Simple Interest Calculator</h1>
 
             Amount <input type="number"  id="principal">  <br/>
-            <form name="myform" oninput="range1value.value = rate.valueAsNumber">
-        Interest Rate <input name="rate" id="rateId" type="range" step="0.25" min="1" max="20">
-        <output name="range1value" for="rate">10.25</output><span style="color: black;">%</span>
-    </form> <br>
-      
-        No. of Years <select id="years">
-            <option value="1">2021</option>
-            <option value="2">2022</option>
-            <option value="3">2023</option>
-            <option value="4">2024</option>
-            <option value="5">2025</option>
-            <option value="6">2026</option>
-            <option value="7">2027</option>
-            <option value="8">2028</option>
-            <option value="9">2029</option>
-            <option value="10">2030</option>
-    </select><br><br>
+            Rate <input type="range" onchange="updateRate()" id="rate" min="1" max="20" value="10.25">
+                <span id="rate_val">
+                10.25 %
+                </span>  <br/> 
+            No. of Years <select id="years">
+                    <option value="1">2021</option>
+                    <option value="2">2022</option>
+                    <option value="3">2023</option>
+                    <option value="4">2024</option>
+                    <option value="5">2025</option>
+                    <option value="6">2026</option>
+                    <option value="7">2027</option>
+                    <option value="8">2028</option>
+                    <option value="9">2029</option>
+                    <option value="10">2030</option>
+                </select>  <br/><br>
     
             
-    <form onsubmit="return validate();" method="get" action=""><br/>
+    <form onsubmit="return validate();" method="get" action="http://google.com"><br/>
             <button id="next" onclick="compute(this.principal, this.rate, this.years);">
             Compute Interest</button> <br><br>
     </form>
 
     <span id="result"></span>
 
-    <div id="divContainer">
-        <p id="p01"> If you deposit 1000000 <span style="background-color:yellow" id="principalOutput" ></span></p>
-        <p id="p02"> at an interest rate of 3.5%.  <span style="background-color:yellow" id="interestOutput" ></span></p>
-        <p id="p03"> You will receive an amount of 175000, <span style="background-color:yellow" id="totalamountOutput" ></span></p>
-        <p id="p04"> in the year 2025<span style="background-color:yellow" id="yearOutput" ></span></p>  <br><br>
-    </div>
-
+    
     <footer>
         &#169; This Calculator belongs to LVM
     </footer>
