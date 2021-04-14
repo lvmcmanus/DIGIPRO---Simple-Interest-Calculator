@@ -1,47 +1,29 @@
-
-function compute(principal, interestRate, years) {
-   
-                
-          document.getElementById("divContainer").style.display = "block";     
-          principal = document.getElementById("principalId").value;
-          interestRate = document.getElementById("rateId").value;
-          years = document.getElementById("yearsId").value;
-          
-          var resultInterest = (principal * interestRate * years / 100);
-          var totalAmount =  parseInt(principal) + parseInt(resultInterest);
-          var totalYear = 2021 + parseInt(years);
-        
-          document.getElementById("principalOutput").innerHTML =  principal;
-          document.getElementById("interestOutput").innerHTML = interestRate;
-          document.getElementById("totalamountOutput").innerHTML =  totalAmount;
-          document.getElementById("yearOutput").innerHTML =  totalYear;
-          
- 
-        }
-function hideDetails()
+function compute()
 {
-       
-      document.getElementById("divContainer").style.display = "none";
+    var principal = document.getElementById("principal").value;
+    var rate = document.getElementById("rate").value;
+    var years = document.getElementById("years").value;
 
+    //Calculates the total interest earned
+    var interest = principal * years * rate /100;
+    
+    //Calculates the future year
+    var year = new Date().getFullYear()+parseInt(years);
+
+    //Validation for principal input
+    if (principal <= 0)
+        alert("Enter a positive number");
+        document.getElementById("principal").focus();
+
+    //Returns input for calculations
+    document.getElementById("result").innerHTML="If you deposit <mark>"+principal+
+    "</mark>,\<br\>at an interest rate of <mark>"
+    +rate+"%\</mark><br\>You will receive an amount of <mark>"
+    +interest+"</mark>,\<br\>in the year <mark>"+year+"</mark>\<br\>"
 }
 
-function validate()
+function updateRate() 
 {
-
-        
-       
-         principal = document.getElementById("principalId").value
-          console.log(principal);
-   
-  
-         if (principal == "" || principal == 0 || principal < 0) {
-           
-              document.getElementById("divContainer").style.display = "none";
-              console.log("validatingNull");
-              window.alert("Enter a positive number");
-              
-              document.getElementById("principalId").focus();
-            return false;
-        }
-       
-    }
+    var rateval = document.getElementById("rate").value;
+    document.getElementById("rate_val").innerText=rateval;
+}
